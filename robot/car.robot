@@ -18,7 +18,6 @@ ${LNAME} =      C0wardz
 ${PHONE} =      5555123456
 
 *** Keywords ***
-# Keywords för VG-delen
 # Testet är designat för att gå igenom men egentligen så ska det vara ett fail
 # då source-filer saknas på siten. Följ anvisningarna i keyword;
 # 'Then the user expects to access documentation & Source files' för att köra 
@@ -122,7 +121,6 @@ Long test
     Click Selected Button    		show
     Check Page Contains			Order
     Click Selected Button     		hide
-#    Check Page Not Contains		Order	
     Click Element And Verify Page	index.php	logo	
 #    Set Selenium Speed      		1 seconds		
     Book Car
