@@ -6,12 +6,12 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-        stage('Build') {
+        stage('Maven Build') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('Test') {
+        stage('Maven Test') {
             steps {
                 sh 'mvn test'
             }
@@ -26,7 +26,7 @@ pipeline {
 		}
             }
         }
-	stage('robot') {
+	stage('Robot') {
             steps {
                 sh 'robot -d results --include try_buy --variable BROWSER:headlesschrome robot/car.robot . .'
             }
