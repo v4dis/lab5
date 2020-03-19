@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Restful Booker" tests="8" time="1.303">
+  <testsuite name="Auth / Get Auth Token" id="9c100b42-caab-430a-9d9d-3ae71d6427c5" timestamp="2020-03-19T11:06:03.825Z" tests="0" failures="0" errors="0" time="0.504"/>
+  <testsuite name="Auth / Defaults" id="cb18cecc-2f59-4a88-b830-d03dbefd13d9" timestamp="2020-03-19T11:06:03.825Z" tests="0" failures="0" errors="0" time="0.115"/>
+  <testsuite name="Bookings / Get Bookings" id="e4058ec1-f170-46ba-bd78-5654c6d5bc7b" timestamp="2020-03-19T11:06:03.825Z" tests="1" failures="0" errors="0" time="0.113">
+    <testcase name="Status code is 200" time="0.113" classname="RestfulBooker"/>
+  </testsuite>
+  <testsuite name="Bookings / Create new Booking" id="32512a6f-d581-408f-965e-1841f4d89083" timestamp="2020-03-19T11:06:03.825Z" tests="10" failures="0" errors="0" time="0.115">
+    <testcase name="Check Query Status" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check First name" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check Last name" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check Total Price" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check if Deposit paid" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check Additional needs" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Verify Check-in date" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Verify Check-out date" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Check First name correct" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Status code is 200" time="0.115" classname="RestfulBooker"/>
+  </testsuite>
+  <testsuite name="Bookings / Get Booking by ID" id="79f612e9-20b2-4f1f-90dc-988823ac2cbc" timestamp="2020-03-19T11:06:03.825Z" tests="2" failures="0" errors="0" time="0.115">
+    <testcase name="Status code is 200" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Se till att bokningen inte är tom" time="0.115" classname="RestfulBooker"/>
+  </testsuite>
+  <testsuite name="Bookings / Update Booking" id="36f233aa-81df-44ac-a2fe-10145bb36689" timestamp="2020-03-19T11:06:03.825Z" tests="3" failures="0" errors="0" time="0.115">
+    <testcase name="Status code is 200" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Verify first name changed" time="0.115" classname="RestfulBooker"/>
+    <testcase name="Verify Check-in date changed" time="0.115" classname="RestfulBooker"/>
+  </testsuite>
+  <testsuite name="Bookings / Update Booking (partial)" id="2f221f51-9b78-497b-9f7e-47e82f81ff6e" timestamp="2020-03-19T11:06:03.825Z" tests="3" failures="0" errors="0" time="0.114">
+    <testcase name="Verify first name changed" time="0.114" classname="RestfulBooker"/>
+    <testcase name="Verify last name changed" time="0.114" classname="RestfulBooker"/>
+    <testcase name="Verify needs changed" time="0.114" classname="RestfulBooker"/>
+  </testsuite>
+  <testsuite name="Bookings / Delete Booking" id="47d86e21-499f-447a-a427-68a0135f4c16" timestamp="2020-03-19T11:06:03.825Z" tests="3" failures="0" errors="0" time="0.112">
+    <testcase name="Status code is 201" time="0.112" classname="RestfulBooker"/>
+    <testcase name="Response should be Not Found" time="0.112" classname="RestfulBooker"/>
+    <testcase name="Response code 404" time="0.112" classname="RestfulBooker"/>
+  </testsuite>
+</testsuites>
