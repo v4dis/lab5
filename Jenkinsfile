@@ -28,7 +28,7 @@ pipeline {
         }
 	stage('Robot') {
             steps {
-                sh 'robot -d results --include negative --variable BROWSER:headlessfirefox robot/car.robot'
+                sh 'robot -d robot/results --include negative --variable BROWSER:headlessfirefox robot/car.robot'
             }
             post {
                 always {
@@ -36,7 +36,7 @@ pipeline {
                     step(
 			[
                             $class              : 'RobotPublisher',
-                            outputPath          : 'robot/results',
+                            outputPath          : 'robot/result',
                             outputFileName      : '**/output.xml',
                             reportFileName      : '**/report.html',
                             logFileName         : '**/log.html',
