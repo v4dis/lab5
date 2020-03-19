@@ -6,9 +6,6 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-
-	}
-
 	stage('Maven Build') {
               steps {
                     sh 'mvn compile'
