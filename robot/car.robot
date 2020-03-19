@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Global documentation
-Resource         ../resources/keywords.robot
+Resource         ./resources/keywords.robot
 Library          SeleniumLibrary
 Test Setup       Begin Web Test
 Test Teardown    End Web Test
