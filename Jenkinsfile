@@ -7,12 +7,6 @@ pipeline {
             }
         }
 
-        stage('Docker') {
-	steps {
-	}	
-	
-
-
 	}
 
 	stage('Maven Build') {
