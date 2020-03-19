@@ -28,7 +28,7 @@ pipeline {
         }
 	stage('robot') {
             steps {
-                sh 'robot -d results --variable BROWSER:headlesschrome robot/car.robot'
+                sh 'robot -d results --include try_buy --variable BROWSER:headlesschrome robot/car.robot'
             }
             post {
                 always {
