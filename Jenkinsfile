@@ -7,9 +7,13 @@ pipeline {
             }
         }
         stage('Maven Build') {
-            steps {
-                sh 'mvn compile'
-            }
+	agent {
+	      docker {image 'node:7-alpine'}
+	      }
+	
+              steps {
+                    sh 'mvn compile'
+            	    }
         }
         stage('Maven Test') {
             steps {

@@ -1,0 +1,15 @@
+Vad var svårast med labben?
+===========================
+
+
+
+
+Vilken del i din Pipeline tycker du ger störst vinst i att köra via Jenkins?
+============================================================================
+
+
+
+
+
+Vad hade du velat lära dig mer eller förstå bättre kopplat till Jenkins?
+========================================================================
