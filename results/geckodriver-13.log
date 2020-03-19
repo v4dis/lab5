@@ -1,0 +1,16 @@
+*** You are running in headless mode.
+1584623198418	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1584623198451	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1584623198451	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1584623198451	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1584623198451	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+1584623201444	Marionette	INFO	Listening on port 46075
+1584623201530	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: http://rental19.infotiv.net/webpage/html/gui/myPage.php, line 71: unreachable code after return statement
+JavaScript error: http://rental19.infotiv.net/webpage/libs/js/jquery.multiselect.js, line 920: ReferenceError: jQuery is not defined
+JavaScript error: http://rental19.infotiv.net/webpage/html/gui/showCars.php, line 564: ReferenceError: $ is not defined
+JavaScript warning: http://rental19.infotiv.net/webpage/html/gui/myPage.php, line 102: unreachable code after return statement
+JavaScript warning: http://rental19.infotiv.net/webpage/html/gui/myPage.php, line 102: unreachable code after return statement
+JavaScript error: http://rental19.infotiv.net/webpage/html/gui/myPage.php, line 99: TypeError: document.getElementById(...).submit is not a function
+JavaScript error: http://rental19.infotiv.net/webpage/html/gui/myPage.php, line 1: ReferenceError: alternate is not defined
+1584623207515	Marionette	INFO	Stopped listening on port 46075
