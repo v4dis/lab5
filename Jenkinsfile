@@ -28,7 +28,7 @@ pipeline {
         }
 	stage('Robot') {
             steps {
-                sh 'robot -d results --include VG_Test --variable BROWSER:headlessfirefox robot/car.robot .'
+                sh 'robot -d results --include VG_Test --variable BROWSER:headlessfirefox robot/car.robot'
             }
             post {
                 always {
