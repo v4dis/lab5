@@ -6,15 +6,19 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-        stage('Maven Build') {
-	agent {
-	      docker {image 'node:ubuntu'}
-	      }
-	
+        stage('Docker') {
+
+	      docker (image 'maven:3.3.3-jdk-8'.inside)	{
+                    sh 'mvn compile'
+		    }
+
+	}
+
+	stage('Maven Build') {
               steps {
                     sh 'mvn compile'
             	    }
-        }
+	}
         stage('Maven Test') {
             steps {
                 sh 'mvn test'
