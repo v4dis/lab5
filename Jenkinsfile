@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Maven Build') {
 	agent {
-	      docker {image 'node:7-alpine'}
+	      docker {image 'node:ubuntu'}
 	      }
 	
               steps {
