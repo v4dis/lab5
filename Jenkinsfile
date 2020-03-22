@@ -28,7 +28,7 @@ pipeline {
         }
 	stage('Robot') {
             steps {
-                sh 'robot -d robot/results --variable BROWSER:headlessfirefox robot/car.robot'
+                sh 'robot -d robot/results --include negative --variable BROWSER:headlessfirefox robot/car.robot'
             }
             post {
                 always {
