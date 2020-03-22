@@ -1,23 +1,29 @@
 pipeline {
-	 agent any
-
+    agent any
     stages {
 	stage('Checkout') {
 	    steps {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-	stage('Maven Build') {
+	stage('Docker mvn build'){
 	    agent {
-    	    	  docker {
+    	    	docker {
 	  	    image 'maven:3-alpine'
 	  	    args '-v $HOME/.m2:/root/.m2'
-	  	  }
+	  	}
 	    }
-
 	    steps {
-	    	  sh 'mvn -B compile'
-            	  }
+	    	sh 'mvn -B compile'
+		sh 'mvn -B test'
+            }
+
+	    
+	}
+	stage('Maven Build') {
+	    steps {
+	    	sh 'mvn -B compile'
+            }
 	}
         stage('Maven Test') {
             steps {
