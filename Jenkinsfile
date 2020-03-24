@@ -28,7 +28,7 @@ pipeline {
         stage('Maven Test') {
             steps {
                 //sh 'mvn -B test cobertura:cobertura'
-		sh 'mvn -B cobertura:cobertura' -Dcobertura.report.format=xml
+		sh 'mvn -B cobertura:cobertura -Dcobertura.report.format=xml'
             }
 	    post {
 		always {
