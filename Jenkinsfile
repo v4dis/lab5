@@ -6,7 +6,7 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-	stage('Docker mvn build'){
+	stage('Docker build & test'){
 	    agent {
     	    	docker {
 	  	    image 'maven:3-alpine'
