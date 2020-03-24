@@ -30,6 +30,11 @@ pipeline {
                 //sh 'mvn -B test cobertura:cobertura'
 		sh 'mvn -B cobertura:cobertura'
             }
+	    post {
+		always {
+		    cobertura coberturaReportFile: '*/.xml'
+		}
+	    }
 	}
         stage('Newman') {
 	    steps {
