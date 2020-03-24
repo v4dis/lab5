@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.5" branch-rate="1.0" lines-covered="1" lines-valid="2" branches-covered="0" branches-valid="0" complexity="1.0" version="1.9.4.1" timestamp="1585071564337">
+<coverage line-rate="0.5" branch-rate="1.0" lines-covered="1" lines-valid="2" branches-covered="0" branches-valid="0" complexity="1.0" version="1.9.4.1" timestamp="1585071979384">
 	<sources>
 		<source>--source</source>
 		<source>/home/vadis/.nextcloud/iths/automtest.20/lab5/src/main/java</source>
@@ -18,13 +18,13 @@
 						</method>
 						<method name="myMethod" signature="()Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="3" hits="3" branch="false"/>
+								<line number="3" hits="4" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="1" hits="0" branch="false"/>
-						<line number="3" hits="3" branch="false"/>
+						<line number="3" hits="4" branch="false"/>
 					</lines>
 				</class>
 			</classes>
