@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-openjdk/lib"/>
-    <property name="sun.java.command" value="/home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire/surefirebooter11605005163724316220.jar /home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire 2020-03-24T18-46-18_382-jvmRun1 surefire13429172037240314823tmp surefire_0769741540390575219tmp"/>
+    <property name="sun.java.command" value="/home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire/surefirebooter11523944547434836108.jar /home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire 2020-03-24T19-04-48_212-jvmRun1 surefire17758140687112084887tmp surefire_07817150543608156059tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/vadis/.nextcloud/iths/automtest.20/lab5/target/test-classes:/home/vadis/.nextcloud/iths/automtest.20/lab5/target/generated-classes/cobertura:/home/vadis/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/vadis/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/vadis/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/vadis/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/vadis/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/vadis/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/vadis/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/home/vadis/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/home/vadis/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire/surefirebooter11605005163724316220.jar"/>
+    <property name="surefire.real.class.path" value="/home/vadis/.nextcloud/iths/automtest.20/lab5/target/surefire/surefirebooter11523944547434836108.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
     <property name="user.name" value="vadis"/>
@@ -50,5 +50,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="myMethod" classname="FooTest" time="0.013"/>
+  <testcase name="myMethod" classname="FooTest" time="0.014"/>
 </testsuite>
