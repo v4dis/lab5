@@ -20,14 +20,15 @@ pipeline {
 
 	    
 	// }
-	stage('Maven Build') {
+	stage('Maven Build & Test') {
 	    steps {
+		sh 'mvn -B clean'
 	    	sh 'mvn -B compile'
+		sh 'mvn -B test'
             }
 	}
-        stage('Maven Test') {
+        stage('Maven Rapport') {
             steps {
-                //sh 'mvn -B test cobertura:cobertura'
 		sh 'mvn -B cobertura:cobertura -Dcobertura.report.format=xml'
             }
 	    post {
