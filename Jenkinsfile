@@ -27,7 +27,7 @@ pipeline {
 	}
         stage('Maven Test') {
             steps {
-                sh 'mvn -B test'
+                sh 'mvn -B test cobertura:cobertura'
             }
 	}
         stage('Newman') {
