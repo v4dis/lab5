@@ -27,7 +27,7 @@ pipeline {
 		sh 'mvn -B test'
             }
 	}
-	/*
+	*/
 	
         stage('Maven Rapport') {
             steps {
