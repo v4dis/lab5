@@ -6,20 +6,18 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
-	// stage('Docker build & test'){
-	//     agent {
-    	//     	docker {
-	//   	    image 'maven:3-alpine'
-	//   	    args '-v $HOME/.m2:/root/.m2'
-	//   	}
-	//     }
-	//     steps {
-	//     	sh 'mvn -B compile'
-	// 	sh 'mvn -B test'
-        //     }
-
-	    
-	// }
+	stage('Docker build & test'){
+	    agent {
+    	    	docker {
+	  	    image 'maven:3-alpine'
+	  	    args '-v $HOME/.m2:/root/.m2'
+	  	}
+	    }
+	    steps {
+	    	sh 'mvn -B compile'
+		sh 'mvn -B test'
+            }
+	}
 	stage('Maven Build & Test') {
 	    steps {
 		sh 'mvn -B clean'
