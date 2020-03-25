@@ -6,6 +6,7 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
+	/* Fungerar inte på ithsjenkins-servern
 	stage('Docker build & test'){
 	    agent {
     	    	docker {
@@ -18,6 +19,7 @@ pipeline {
 		sh 'mvn -B test'
             }
 	}
+	*/
 	stage('Maven Build & Test') {
 	    steps {
 		sh 'mvn -B clean'

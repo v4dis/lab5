@@ -1,0 +1,374 @@
+Started by user Anonymous Coward
+Obtained Jenkinsfile from git https://github.com/v4dis/lab5.git
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/lab5
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+using credential 0
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/v4dis/lab5.git # timeout=10
+Fetching upstream changes from https://github.com/v4dis/lab5.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials lab5
+ > git fetch --tags --force --progress -- https://github.com/v4dis/lab5.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 951cdffb6f7c46f515c02af8bed719896a2c0b06 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 951cdffb6f7c46f515c02af8bed719896a2c0b06 # timeout=10
+Commit message: "Added Cobertura support"
+ > git rev-list --no-walk 5f7b868d1e0441616efa3b2d8ff22888d5b32b03 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] git
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/v4dis/lab5.git # timeout=10
+Fetching upstream changes from https://github.com/v4dis/lab5.git
+ > git --version # timeout=10
+ > git fetch --tags --force --progress -- https://github.com/v4dis/lab5.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 951cdffb6f7c46f515c02af8bed719896a2c0b06 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 951cdffb6f7c46f515c02af8bed719896a2c0b06 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master 951cdffb6f7c46f515c02af8bed719896a2c0b06 # timeout=10
+Commit message: "Added Cobertura support"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Docker build & test)
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/lab5@2
+[Pipeline] {
+[Pipeline] checkout
+using credential 0
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/v4dis/lab5.git # timeout=10
+Fetching upstream changes from https://github.com/v4dis/lab5.git
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials lab5
+ > git fetch --tags --force --progress -- https://github.com/v4dis/lab5.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 951cdffb6f7c46f515c02af8bed719896a2c0b06 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 951cdffb6f7c46f515c02af8bed719896a2c0b06 # timeout=10
+Commit message: "Added Cobertura support"
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ docker inspect -f . maven:3-alpine
+.
+[Pipeline] withDockerContainer
+Jenkins does not seem to be running inside a container
+$ docker run -t -d -u 963:963 -v $HOME/.m2:/root/.m2 -w /var/lib/jenkins/workspace/lab5@2 -v /var/lib/jenkins/workspace/lab5@2:/var/lib/jenkins/workspace/lab5@2:rw,z -v /var/lib/jenkins/workspace/lab5@2@tmp:/var/lib/jenkins/workspace/lab5@2@tmp:rw,z -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** -e ******** maven:3-alpine cat
+$ docker top 4b98ee98dc5bfd79c02b645757a8e50a4da2a511c2f4ecdd9a08815a8ade851f -eo pid,comm
+[Pipeline] {
+[Pipeline] sh
++ mvn -B compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ fooproject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/lab5@2/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.889 s
+[INFO] Finished at: 2020-03-25T10:38:30Z
+[INFO] Final Memory: 14M/302M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] sh
++ mvn -B test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ fooproject ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/lab5@2/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ fooproject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/lab5@2/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ fooproject ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running FooTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in FooTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.972 s
+[INFO] Finished at: 2020-03-25T10:38:34Z
+[INFO] Final Memory: 14M/207M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+$ docker stop --time=1 4b98ee98dc5bfd79c02b645757a8e50a4da2a511c2f4ecdd9a08815a8ade851f
+$ docker rm -f 4b98ee98dc5bfd79c02b645757a8e50a4da2a511c2f4ecdd9a08815a8ade851f
+[Pipeline] // withDockerContainer
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Maven Build & Test)
+[Pipeline] sh
++ mvn -B clean
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< groupId:fooproject >-------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ fooproject ---
+[INFO] Deleting /var/lib/jenkins/workspace/lab5/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.132 s
+[INFO] Finished at: 2020-03-25T11:38:36+01:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] sh
++ mvn -B compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< groupId:fooproject >-------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ fooproject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/lab5/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.610 s
+[INFO] Finished at: 2020-03-25T11:38:38+01:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] sh
++ mvn -B test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< groupId:fooproject >-------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ fooproject ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/lab5/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ fooproject ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/lab5/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ fooproject ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running FooTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in FooTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.466 s
+[INFO] Finished at: 2020-03-25T11:38:40+01:00
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Maven Rapport)
+[Pipeline] sh
++ mvn -B cobertura:cobertura -Dcobertura.report.format=xml
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< groupId:fooproject >-------------------------
+[INFO] Building fooproject 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> cobertura-maven-plugin:2.5.1:cobertura (default-cli) > [cobertura]test @ fooproject >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ fooproject ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.5.1:instrument (default-cli) @ fooproject ---
+[INFO] Cobertura 1.9.4.1 - GNU GPL License (NO WARRANTY) - See COPYRIGHT file
+Instrumenting 1 file to /var/lib/jenkins/workspace/lab5/target/generated-classes/cobertura
+Cobertura: Saved information on 1 classes.
+Instrument time: 36ms
+
+[INFO] Instrumentation was successful.
+[INFO] NOT adding cobertura ser file to attached artifacts list.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ fooproject ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/lab5/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ fooproject ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ fooproject ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running FooTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in FooTest
+Flushing results...
+Flushing results done
+Cobertura: Loaded information on 1 classes.
+Cobertura: Saved information on 1 classes.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] <<< cobertura-maven-plugin:2.5.1:cobertura (default-cli) < [cobertura]test @ fooproject <<<
+[INFO] 
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.5.1:cobertura (default-cli) @ fooproject ---
+[INFO] Cobertura 1.9.4.1 - GNU GPL License (NO WARRANTY) - See COPYRIGHT file
+Cobertura: Loaded information on 1 classes.
+Report time: 82ms
+
+[INFO] Cobertura Report generation was successful.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.901 s
+[INFO] Finished at: 2020-03-25T11:38:43+01:00
+[INFO] ------------------------------------------------------------------------
+Post stage
+[Pipeline] cobertura
+[Cobertura] Publishing Cobertura coverage report...
+
+[Cobertura] Publishing Cobertura coverage results...
+
+[Cobertura] Cobertura coverage report found.
+
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Newman)
+[Pipeline] sh
++ newman run postman/restful_booker.postman_collection.json --environment postman/restful_booker.postman_environment.json --reporters junit
+Post stage
+[Pipeline] junit
+Recording test results
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Robot)
+[Pipeline] sh
++ robot -d robot/results --include negative --variable BROWSER:headlessfirefox robot/car.robot
+==============================================================================
+Car :: Global documentation                                                   
+==============================================================================
+Log in with the wrong credentials :: User logging in with the wron... | PASS |
+------------------------------------------------------------------------------
+Car :: Global documentation                                           | PASS |
+1 critical test, 1 passed, 0 failed
+1 test total, 1 passed, 0 failed
+==============================================================================
+Output:  /var/lib/jenkins/workspace/lab5/robot/results/output.xml
+Log:     /var/lib/jenkins/workspace/lab5/robot/results/log.html
+Report:  /var/lib/jenkins/workspace/lab5/robot/results/report.html
+Post stage
+[Pipeline] script
+[Pipeline] {
+[Pipeline] step
+Robot results publisher started...
+-Parsing output xml:
+Done!
+-Copying log files to build dir:
+Done!
+-Assigning results to build:
+Done!
+-Checking thresholds:
+Done!
+Done publishing Robot results.
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] junit
+Recording test results
+[Pipeline] emailext
+Sending email to: d@jdd.nu
+Connection error sending email, retrying once more in 10 seconds...
+Connection error sending email, retrying once more in 10 seconds...
+Failed after second try sending email
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
