@@ -1,15 +1,20 @@
 Vad var svårast med labben?
 ===========================
-
-
+Att integrera allt. Dokumentationen av Jenkins-plugins är ofta rätt
+kortfattad online. Efter ganska mycket webb-sökning och "trial and error"
+fick jag det mesta att funka men för varje rätt svar på olika forum fanns
+det lika många felaktiga eller icke-aktuella svar. Docker fungerar bra på
+min lokala maskin men failade ganska drastiskt på servern så jag fick byta
+plugin för vg-delen till Cobertura.
 
 
 Vilken del i din Pipeline tycker du ger störst vinst i att köra via Jenkins?
 ============================================================================
-
-
-
+Helheten är det som verkligen utmärker sig. Att bygga, testa och generera
+rapporter med ett klick eller commit. Att köra robot/selenium headless i
+automattest sparar också mycket tid och cykler för mig.
 
 
 Vad hade du velat lära dig mer eller förstå bättre kopplat till Jenkins?
 ========================================================================
+Var man hittar komplett, aktuell dokumentation och exempel för plugins.
