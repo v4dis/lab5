@@ -6,6 +6,8 @@ pipeline {
 		git 'https://github.com/v4dis/lab5.git'
             }
         }
+	
+	/*
 	stage('Docker build & test'){
 	    agent {
     	    	docker {
@@ -25,6 +27,8 @@ pipeline {
 		sh 'mvn -B test'
             }
 	}
+	/*
+	
         stage('Maven Rapport') {
             steps {
 		sh 'mvn -B cobertura:cobertura -Dcobertura.report.format=xml'
